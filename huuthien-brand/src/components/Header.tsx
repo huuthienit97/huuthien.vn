@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
+import Link from "next/link";
 
 const navLinks = [
   { href: "#home", label: "Trang chủ" },
@@ -32,7 +33,7 @@ const Header = () => {
       <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-400 opacity-60 blur-[1px] z-10" />
       <div className="relative max-w-6xl mx-auto flex items-center justify-between py-3 px-4 sm:px-8 z-20">
         {/* Logo nổi bật hơn */}
-        <a
+        <Link
           href="/"
           className="flex items-center gap-3 relative group"
         >
@@ -46,7 +47,7 @@ const Header = () => {
           <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-700 via-cyan-500 to-sky-500 text-white font-bold text-2xl shadow-2xl border-2 border-white/20 ring-2 ring-cyan-400/40 group-hover:ring-cyan-400/70 transition-all duration-300 glow-logo">
             HT
           </span>
-        </a>
+        </Link>
         {/* Menu desktop nổi bật hơn */}
         <nav className="hidden md:flex gap-2 lg:gap-6 items-center ml-8">
           {navLinks.map((link) => (
