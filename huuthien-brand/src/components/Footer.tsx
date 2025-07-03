@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
         <div className="text-slate-300 text-center md:text-left text-base">
           © {new Date().getFullYear()} <span className="font-bold text-cyan-400 glow-text">HuuThien.vn</span>
-          <span className="block md:inline ml-2 text-xs text-slate-400 glow-text-small">"Lan tỏa tri thức – Kết nối giá trị – Sáng tạo tương lai"</span>
+          <span className="block md:inline ml-2 text-xs text-slate-400 glow-text-small">&quot;Lan tỏa tri thức – Kết nối giá trị – Sáng tạo tương lai&quot;</span>
         </div>
         <nav className="flex gap-6 text-cyan-400 font-medium">
           <a href="#home" className="hover:text-white hover:drop-shadow-[0_0_8px_#38bdf8] transition-all duration-300">Trang chủ</a>
