@@ -11,6 +11,16 @@ const navLinks = [
   { href: "#contact", label: "Liên hệ" },
 ];
 
+function scrollToSection(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) {
+  if (href.startsWith('#')) {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
+
 const Header = () => {
   const [open, setOpen] = useState(false);
 
@@ -23,7 +33,7 @@ const Header = () => {
       <div className="relative max-w-6xl mx-auto flex items-center justify-between py-3 px-4 sm:px-8 z-20">
         {/* Logo nổi bật hơn */}
         <a
-          href="#home"
+          href="/"
           className="flex items-center gap-3 relative group"
         >
           {/* Crystal SVG lớn hơn quanh logo */}
@@ -43,6 +53,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
+              onClick={e => scrollToSection(e, link.href)}
               className="led-text relative px-5 py-2 font-semibold rounded-xl transition-all duration-200 bg-clip-text text-white after:absolute after:left-1/2 after:-bottom-2 after:w-0 after:h-1.5 after:bg-gradient-to-r after:from-cyan-400 after:via-blue-400 after:to-fuchsia-400 after:rounded-full after:transition-all after:duration-300 hover:after:w-4/5 focus:after:w-4/5 after:-translate-x-1/2"
             >
               <span className="relative z-10">{link.label}</span>
@@ -65,8 +76,8 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
+              onClick={e => { scrollToSection(e, link.href); setOpen(false); }}
               className="led-text px-4 py-3 font-semibold rounded-xl bg-clip-text text-white transition-all duration-200"
-              onClick={() => setOpen(false)}
             >
               <span className="relative z-10">{link.label}</span>
             </a>
